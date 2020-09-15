@@ -1,0 +1,8 @@
+.mat-tab-group .mat-tab {
+
+}
+
+.mat-tab-group .mat-tab-active{
+  background-color: red ;
+  opacity: 1 !important;
+}

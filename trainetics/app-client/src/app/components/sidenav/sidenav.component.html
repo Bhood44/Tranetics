@@ -1,0 +1,37 @@
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" style="background-color: #2d2d2d">
+    <!--<div class="sidenav-header">-->
+      <mat-toolbar style="background-color: #fe1e1e; color: black;">Menu<mat-icon style="padding-left: 120px; color: black;">menu</mat-icon></mat-toolbar>
+    <!--</div>-->
+    <button mat-button routerLink="/tracker">FITNESS TRACKER<mat-icon >timer</mat-icon></button>
+    <button mat-button routerLink="/goal">GOALS <mat-icon>list</mat-icon></button>
+    <button mat-button routerLink="/nutrition">NUTRITION <mat-icon>fastfood</mat-icon></button>
+    <button mat-button routerLink="/profile">PROFILE <mat-icon>account_circle</mat-icon></button>
+    <button mat-button routerLink="/weekly">WEEKLY CHALLENGES <mat-icon>new_releases</mat-icon></button>
+  </mat-drawer>
+
+  <div class="toolbar-content">
+    <mat-toolbar style="background-color: #fe1e1e">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="drawer.toggle()">
+          <mat-icon style="color: black">menu</mat-icon>
+        </button>
+
+        <span style="font-family: 'Microsoft Sans Serif'; color: black;">TRAINETICS</span>
+        <span class="spacer"></span>
+        <!--<mat-icon>scatter_plot</mat-icon>-->
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon style="color: black">grain</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Sign Out</span>
+          </button>
+        </mat-menu>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
